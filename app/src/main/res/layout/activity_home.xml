@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/homeleave"
+    tools:context=".HomeActivity">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:id="@+id/lst1"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="17dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aljazeera_arabic_regular"
+            android:text="@string/welcomeHome"
+            android:textColor="#47484C"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mr_abdullah"
+            android:fontFamily="@font/aljazeera_arabic_regular"
+            android:layout_marginTop="4dp"
+            android:textStyle="bold"
+            android:textColor="#3D5E93"
+            android:textAllCaps="true"
+            android:textSize="18sp" />
+    </LinearLayout>
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/userImage"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/lst1"
+        android:src="@drawable/saudiperson"
+        android:contentDescription="@string/todo" />
+    <LinearLayout
+        android:id="@+id/lstbtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/userImage"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="17dp"
+        android:padding="9dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/homebtnbg"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/aljazeera_arabic_regular"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:text="@string/tell_us_your_feeling_today" />
+        <Button
+            android:layout_width="77dp"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            android:textColor="#486CAC"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:layout_marginHorizontal="50dp"
+            android:background="@drawable/signupbg"
+            android:text="@string/tell_us"
+            app:backgroundTint="@null" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/emp_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/employee_dashboard"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/aljazeera_arabic_regular"
+        android:layout_marginStart="17dp"
+        android:layout_below="@id/lstbtn"/>
+
+    <GridView
+        android:id="@+id/grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="393dp"
+        android:layout_above="@+id/bottom_navigation"
+        android:layout_below="@id/emp_text"
+        android:numColumns="3" />
+
+     <androidx.viewpager.widget.ViewPager
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/grid_view"/>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_navigation"
+        android:id="@+id/my_pager"
+        android:layout_marginRight="17dp"
+        android:layout_marginLeft="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_below="@id/grid_view" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/my_tablayout"
+        app:tabGravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabIndicatorHeight="0dp"
+        android:layout_marginBottom="8dp"
+        app:tabBackground="@drawable/indicator_selector"
+        android:layout_below="@id/my_pager"/>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/nav_bg"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menu_nav" />
+
+</RelativeLayout>
